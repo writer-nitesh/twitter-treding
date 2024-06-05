@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Twitter Trend</title>
+</head>
+
+
+
+<body>
+    <a href="/trends">Click here to run the script. </a> <br><br>
+
+
+    <h3>
+        These are the most happening topics as on <span>{{date}}</span>
+    </h3>
+    <span> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+    <br><br>
+
+    {% for i in data.trends %}
+    {{ i }} <br>
+    {% endfor %}
+
+    <h4>The IP address used for this query was {{data.ip}}</h4>
+
+
+
+    <h3>Here’s a JSON extract of this record from the MongoDB:</h3>
+    {% for i in data.db_data %}
+    {{ i }} <br>
+    {% endfor %}
+    <br><br>
+    <a href="/trends">Click here to run the query again. </a>
+
+</body>
+
+</html>
